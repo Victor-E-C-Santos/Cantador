@@ -5,37 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        box-sizing: border-box;
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            min-height: 100vh;
+            background: black;
+            color: white;
+            display: grid;
+            place-items: center;
+        }
+        
+        section {
+            background: rgba(0 , 0 , 255 , .2);
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        p {
+            font-size: 100px;
+        }
+        </style>
+    </head>
 
-    }
-    body {
-        min-height: 100vh;
-        background: black;
-        color: white;
-        display: grid;
-        place-items: center;
-    }
-    
-    section {
-        background: rgba(255 , 255 , 255 , .2);
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-    }
-    p {
-        font-size: 100px;
-    }
-</style>
 <body>
     <section>
         <h1>Contador</h1>
-        <p>0</p>
-        <button>menos</button>
-        <button>mais</button>
+        <p id="resultado"></p>
+        <button onclick="aumentar()">mais</button>
+        <button onclick="diminuir()">menos</button>
+        <button onclick="mult()">Multiplicar</button>
     </section>
+    <script>
+        
+        let numero = 0
+        
+        function aumentar() {
+            numero = numero + 1
+            mostrarNaTela()
+        }
+        
+        function diminuir() {
+            numero = numero - 1
+            mostrarNaTela()
+        }
+        
+        function mult() {
+            numero = numero * 2
+            mostrarNaTela()
+        }
+        
+        function mostrarNaTela() {
+            const p = document.querySelector("#resultado")
+            p.innerText = numero
+        }
+        
+        mostrarNaTela()
+        </script>
 </body>
 </html>
